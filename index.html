@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Vault</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1>My Vault</h1>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search title or text..."
+      />
+    </header>
+
+    <main class="container">
+      <section class="form-section">
+        <h2>New Entry</h2>
+        <form id="entryForm">
+          <input
+            type="text"
+            id="titleInput"
+            placeholder="Title (e.g., Book Name or Sher)"
+            autocomplete="off"
+            required
+          />
+
+          <select id="categoryInput" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="Shayari">Shayari</option>
+            <option value="Book Note">Book Note</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <textarea
+            id="contentInput"
+            rows="6"
+            placeholder="Write your thoughts here..."
+            required
+          ></textarea>
+          <div class="meta-bar">
+            <span id="wordCount">Words: 0</span>
+          </div>
+
+          <button type="submit" id="saveBtn">Save to Vault</button>
+        </form>
+      </section>
+
+      <section class="display-section">
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-filter="All">All</button>
+          <button class="tab-btn" data-filter="Shayari">Shayari</button>
+          <button class="tab-btn" data-filter="Book Note">Book Notes</button>
+        </div>
+
+        <div id="cardsContainer" class="cards-grid">
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
